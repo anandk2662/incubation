@@ -20,9 +20,9 @@ const Button = React.forwardRef(({
   };
 
   const sizes = {
-    sm: 'px-3.5 h-8 text-sm',
-    md: 'px-5 h-10 text-sm',
-    lg: 'px-7 h-12 text-base rounded-md'
+    sm: 'px-3 h-7 text-[12px]',
+    md: 'px-4 h-9 text-sm',
+    lg: 'px-6 h-11 text-base rounded-md'
   };
 
   const variantStyles = variants[variant] || variants.primary;

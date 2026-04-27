@@ -80,7 +80,7 @@
   }
 
   .container {
-    @apply max-w-[1280px] mx-auto px-6 sm:px-12 lg:px-20;
+    @apply max-w-[1280px] mx-auto px-5 sm:px-10 lg:px-16;
   }
 
   .surface {

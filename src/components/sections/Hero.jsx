@@ -5,7 +5,7 @@ import { ArrowRight, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] lg:min-h-screen flex items-center pt-24 lg:pt-20 overflow-hidden" id="hero">
+    <section className="relative min-h-[60vh] lg:min-h-[80vh] flex items-center pt-40 lg:pt-36 overflow-hidden" id="hero">
       {/* 
         Mobile Background Animation 
       */}
@@ -30,10 +30,10 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-[clamp(40px,9vw,80px)] font-black leading-[0.9] tracking-tighter mb-6 text-text-primary" id="hero-title">
+              <h1 className="text-[clamp(40px,9vw,80px)] font-black leading-[0.9] tracking-tighter mb-4 text-text-primary" id="hero-title">
                 Building the <span className="bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent">future</span> of technology.
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl text-text-secondary max-w-[540px] mb-8 lg:mb-10 leading-relaxed" id="hero-subtitle">
+              <p className="text-base sm:text-lg lg:text-xl text-text-secondary max-w-[540px] mb-6 lg:mb-8 leading-relaxed" id="hero-subtitle">
                 We are an incubation team dedicated to transforming moonshot ideas into reality through rapid prototyping, research, and engineering excellence.
               </p>
               <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
@@ -41,7 +41,7 @@ export default function Hero() {
                   variant="primary" 
                   size="lg" 
                   iconRight={<ArrowRight size={18} />}
-                  className="w-full sm:w-auto px-8 sm:px-10"
+                  className="w-full sm:w-auto px-6 sm:px-8"
                   id="hero-cta-projects"
                 >
                   Explore Projects
@@ -50,7 +50,7 @@ export default function Hero() {
                   variant="secondary" 
                   size="lg" 
                   icon={<Play size={18} />}
-                  className="w-full sm:w-auto px-8 sm:px-10"
+                  className="w-full sm:w-auto px-6 sm:px-8"
                   id="hero-cta-demos"
                 >
                   Watch Demos

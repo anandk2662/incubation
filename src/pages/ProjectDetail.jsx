@@ -19,20 +19,20 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="pt-20 sm:pt-28 min-h-screen pb-16">
+    <div className="pt-32 sm:pt-28 min-h-screen pb-12">
       <div className="container">
-        <Link to="/projects" className="inline-flex items-center gap-2 text-text-tertiary text-sm font-semibold mb-8 hover:text-text-primary transition-colors no-underline group">
+        <Link to="/projects" className="inline-flex items-center gap-2 text-text-tertiary text-sm font-semibold mb-6 hover:text-text-primary transition-colors no-underline group">
           <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           Back to Projects
         </Link>
 
-        <header className="mb-12 sm:mb-16">
-          <div className="flex flex-wrap items-center gap-4 mb-6">
+        <header className="mb-10 sm:mb-14">
+          <div className="flex flex-wrap items-center gap-4 mb-4">
             <Badge variant={project.status.toLowerCase()} dot={true}>{project.status}</Badge>
             <span className="text-[10px] font-bold uppercase tracking-widest text-text-tertiary">{project.category}</span>
           </div>
-          <h1 className="text-[clamp(32px,8vw,64px)] font-black tracking-tight leading-[1.1] mb-6 text-text-primary">{project.title}</h1>
-          <p className="text-lg sm:text-xl text-text-secondary font-medium max-w-3xl mb-10 leading-relaxed">{project.subtitle}</p>
+          <h1 className="text-[clamp(32px,8vw,64px)] font-black tracking-tight leading-[1.1] mb-4 text-text-primary">{project.title}</h1>
+          <p className="text-lg sm:text-xl text-text-secondary font-medium max-w-3xl mb-8 leading-relaxed">{project.subtitle}</p>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <Button 
@@ -76,8 +76,8 @@ export default function ProjectDetail() {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12 lg:gap-20">
-          <div className="flex flex-col gap-12 sm:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-10 lg:gap-16">
+          <div className="flex flex-col gap-10 sm:gap-14">
             <section>
               <h2 className="text-xl font-extrabold tracking-tight mb-4 text-text-primary uppercase text-[11px] tracking-[0.2em] opacity-40">Overview</h2>
               <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-3xl">{project.description}</p>
@@ -115,7 +115,7 @@ export default function ProjectDetail() {
 
           <aside className="flex flex-col gap-6">
             <div className="bg-bg-surface border border-border-primary rounded-xl p-6 shadow-sm">
-              <h3 className="flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-6">
+              <h3 className="flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-4">
                 <Layers size={16} />
                 Tech Stack
               </h3>
@@ -129,7 +129,7 @@ export default function ProjectDetail() {
             </div>
 
             <div className="bg-bg-surface border border-border-primary rounded-xl p-6 shadow-sm">
-              <h3 className="flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-6">
+              <h3 className="flex items-center gap-2.5 text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-4">
                 <Users size={16} />
                 Core Team
               </h3>
@@ -146,7 +146,7 @@ export default function ProjectDetail() {
             </div>
 
             <div className="bg-bg-surface border border-border-primary rounded-xl p-6 shadow-sm">
-              <h3 className="text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-6">Metrics</h3>
+              <h3 className="text-[10px] font-bold uppercase tracking-widest text-text-tertiary mb-4">Metrics</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col">
                   <span className="text-[9px] text-text-tertiary uppercase tracking-widest mb-1">Stars</span>

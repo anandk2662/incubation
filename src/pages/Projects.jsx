@@ -21,8 +21,8 @@ export default function Projects() {
   }, [search, category]);
 
   return (
-    <div className="pt-20 sm:pt-28 min-h-screen">
-      <section className="pb-8 sm:pb-12">
+    <div className="pt-32 sm:pt-28 min-h-screen">
+      <section className="pb-6 sm:pb-8">
         <div className="container">
           <h1 className="text-4xl sm:text-6xl font-black tracking-tight mb-4 text-text-primary">Projects</h1>
           <p className="text-base sm:text-lg text-text-secondary max-w-2xl leading-relaxed mb-8">
@@ -60,7 +60,7 @@ export default function Projects() {
         </div>
       </section>
 
-      <section className="pb-16 sm:pb-24">
+      <section className="pb-12 sm:pb-16">
         <div className="container">
           {filteredProjects.length > 0 ? (
             <motion.div 

@@ -6,11 +6,11 @@ import Button from '../ui/Button';
 export default function DemoPreview() {
   return (
     <div id="demo-preview">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] items-center gap-10 lg:gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] items-center gap-8 lg:gap-12">
         <div className="max-w-[480px] lg:text-left text-center mx-auto lg:mx-0">
-          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-tertiary mb-3 block">Live Experiments</span>
-          <h2 className="text-2xl sm:text-5xl font-black tracking-tight mb-4 text-text-primary">Experience the innovation.</h2>
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-8">
+          <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-tertiary mb-2 block">Live Experiments</span>
+          <h2 className="text-2xl sm:text-5xl font-black tracking-tight mb-3 text-text-primary">Experience the innovation.</h2>
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed mb-6">
             We don't just write code; we build interactive experiences. Explore our live demo lab to interact with our latest prototypes and research experiments in real-time.
           </p>
           <div className="flex lg:justify-start justify-center">
@@ -27,7 +27,7 @@ export default function DemoPreview() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="h-10 bg-bg-elevated border-b border-border-primary flex items-center justify-between px-4">
+          <div className="h-9 bg-bg-elevated border-b border-border-primary flex items-center justify-between px-4">
             <div className="flex gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-red-500/40"></span>
               <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/40"></span>
@@ -41,7 +41,7 @@ export default function DemoPreview() {
               <Maximize2 size={12} />
             </div>
           </div>
-          <div className="bg-black p-5 sm:p-7 min-h-[250px] font-mono text-xs sm:text-sm leading-relaxed">
+          <div className="bg-black p-4 sm:p-6 min-h-[200px] font-mono text-xs sm:text-[13px] leading-relaxed">
             <div className="flex gap-3 mb-2">
               <span className="text-text-tertiary select-none">$</span>
               <span className="text-white">launch --project=orion --env=production</span>

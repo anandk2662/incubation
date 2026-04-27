@@ -11,31 +11,31 @@ export default function Landing() {
     <div className="landing-page overflow-x-hidden">
       <Hero />
       
-      <div className="py-12 sm:py-20 lg:py-28">
+      <div className="py-8 sm:py-14 lg:py-20">
         <div className="container">
           <Pipeline />
         </div>
       </div>
       
-      <div className="py-12 sm:py-20 lg:py-28 bg-bg-secondary/30">
+      <div className="py-8 sm:py-14 lg:py-20 bg-bg-secondary/30">
         <div className="container">
           <ProjectsGrid featuredOnly={true} />
         </div>
       </div>
       
-      <div className="py-12 sm:py-20 lg:py-28">
+      <div className="py-8 sm:py-14 lg:py-20">
         <div className="container">
           <DemoPreview />
         </div>
       </div>
       
-      <div className="py-12 sm:py-20 lg:py-28 bg-bg-secondary/30">
+      <div className="py-8 sm:py-14 lg:py-20 bg-bg-secondary/30">
         <div className="container">
           <ActivityFeed />
         </div>
       </div>
       
-      <div className="py-12 sm:py-20 lg:py-28">
+      <div className="py-8 sm:py-14 lg:py-20">
         <TeamCarousel />
       </div>
     </div>

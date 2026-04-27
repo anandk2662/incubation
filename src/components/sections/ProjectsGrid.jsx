@@ -11,9 +11,9 @@ export default function ProjectsGrid({ featuredOnly = true, projects: propProjec
   return (
     <div className="w-full" id="projects">
       {showHeader && (
-        <div className="mb-8 sm:mb-12">
+        <div className="mb-6 sm:mb-8">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-tertiary mb-2 block">Portfolio</span>
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 text-text-primary">{title}</h2>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-3 text-text-primary">{title}</h2>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <p className="text-sm sm:text-lg text-text-secondary max-w-xl leading-relaxed">
               A curated selection of our most impactful technical explorations.
@@ -31,13 +31,13 @@ export default function ProjectsGrid({ featuredOnly = true, projects: propProjec
         {displayProjects.map((project, index) => (
           <motion.div
             key={project.id}
-            className="group relative bg-bg-surface border border-border-primary rounded-xl p-6 sm:p-7 transition-all duration-300 hover:-translate-y-2 hover:border-border-hover hover:shadow-2xl flex flex-col h-full w-full"
+            className="group relative bg-bg-surface border border-border-primary rounded-xl p-5 sm:p-6 transition-all duration-300 hover:-translate-y-2 hover:border-border-hover hover:shadow-2xl flex flex-col h-full w-full"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: index * 0.05, duration: 0.4 }}
           >
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-5">
               <Badge variant={project.status.toLowerCase()}>{project.status}</Badge>
               <div className="flex gap-3">
                 <a href={project.githubUrl} className="text-text-tertiary hover:text-text-primary transition-colors p-1" aria-label="GitHub">
@@ -52,12 +52,12 @@ export default function ProjectsGrid({ featuredOnly = true, projects: propProjec
             <div className="flex-1">
               <h3 className="text-lg sm:text-xl font-bold text-text-primary mb-1.5 group-hover:text-white transition-colors">{project.title}</h3>
               <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-text-tertiary mb-3">{project.subtitle}</p>
-              <p className="text-sm text-text-secondary leading-relaxed mb-6 line-clamp-3 group-hover:text-text-primary transition-colors">
+              <p className="text-sm text-text-secondary leading-relaxed mb-4 line-clamp-3 group-hover:text-text-primary transition-colors">
                 {project.description}
               </p>
             </div>
 
-            <div className="pt-5 border-t border-border-primary flex items-center justify-between mt-auto">
+            <div className="pt-4 border-t border-border-primary flex items-center justify-between mt-auto">
               <div className="flex gap-2">
                 {project.tags.slice(0, 2).map(tag => (
                   <span key={tag} className="text-[9px] font-bold text-text-tertiary bg-bg-elevated px-2 py-0.5 rounded-sm uppercase tracking-wider">

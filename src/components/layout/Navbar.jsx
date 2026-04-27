@@ -31,30 +31,30 @@ export default function Navbar() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-[200] h-16 transition-all duration-350 border-b border-transparent ${
-          scrolled ? 'bg-bg-primary/80 border-border-primary backdrop-blur-xl saturate-[180%]' : ''
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-[200] w-[90%] max-w-4xl h-12 transition-all duration-350 border border-border-primary bg-bg-primary/70 backdrop-blur-md rounded-full flex items-center px-4 md:px-6 shadow-[0_8px_32px_rgba(0,0,0,0.4)] ${
+          scrolled ? 'bg-bg-primary/90 border-white/10' : ''
         }`}
       >
-        <div className="container h-full flex items-center justify-between gap-8">
-          <Link to="/" className="flex items-center gap-2.5 no-underline group">
-            <svg className="w-5.5 h-5.5 text-text-primary shrink-0 transition-transform group-hover:scale-105" viewBox="0 0 24 24" fill="none">
-              <rect x="2" y="2" width="9" height="9" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="13" y="2" width="9" height="9" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="2" y="13" width="9" height="9" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="13" y="13" width="9" height="9" stroke="currentColor" strokeWidth="1.5" fill="currentColor" fillOpacity="0.15" />
+        <div className="flex items-center justify-between w-full gap-4 md:gap-8">
+          <Link to="/" className="flex items-center gap-2 no-underline group shrink-0">
+            <svg className="w-4.5 h-4.5 text-text-primary shrink-0 transition-transform group-hover:rotate-90" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="9" height="9" stroke="currentColor" strokeWidth="2" />
+              <rect x="13" y="2" width="9" height="9" stroke="currentColor" strokeWidth="2" />
+              <rect x="2" y="13" width="9" height="9" stroke="currentColor" strokeWidth="2" />
+              <rect x="13" y="13" width="9" height="9" stroke="currentColor" strokeWidth="2" fill="currentColor" />
             </svg>
-            <span className="text-sm font-semibold tracking-tight text-text-primary">Incubation</span>
+            <span className="text-[13px] font-bold tracking-tight text-text-primary hidden sm:block">Incubation</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden md:flex items-center gap-1.5" aria-label="Main navigation">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
-                className={`px-3 py-1.5 text-sm font-medium rounded-sm transition-all no-underline ${
+                className={`px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider rounded-full transition-all no-underline ${
                   pathname === link.to 
-                    ? 'text-text-primary' 
-                    : 'text-text-secondary hover:text-text-primary hover:bg-bg-hover'
+                    ? 'text-text-primary bg-white/10' 
+                    : 'text-text-secondary hover:text-text-primary hover:bg-white/5'
                 }`}
               >
                 {link.label}
@@ -62,16 +62,16 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Link to="/projects" className="hidden md:inline-flex items-center px-4 py-1.5 text-sm font-medium bg-text-primary text-bg-primary rounded-sm transition-all hover:opacity-85 hover:-translate-y-px no-underline">
+          <div className="flex items-center gap-3">
+            <Link to="/projects" className="hidden sm:inline-flex items-center px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider bg-text-primary text-bg-primary rounded-full transition-all hover:bg-white/90 no-underline">
               View Projects
             </Link>
             <button
-              className="flex md:hidden items-center justify-center w-9 h-9 rounded-sm text-text-primary hover:bg-bg-hover transition-colors"
+              className="flex md:hidden items-center justify-center w-8 h-8 rounded-full text-text-primary hover:bg-white/10 transition-colors"
               onClick={() => setMenuOpen((v) => !v)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             >
-              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+              {menuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
@@ -79,33 +79,45 @@ export default function Navbar() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 top-16 z-[199] bg-bg-primary p-8 pt-4 flex flex-col border-t border-border-primary md:hidden"
-          >
-            <nav className="flex flex-col gap-1 flex-1">
-              <Link to="/" className={`py-3.5 text-2xl font-bold tracking-tight border-b border-border-primary no-underline ${pathname === '/' ? 'text-text-primary' : 'text-text-secondary'}`}>
-                Home
-              </Link>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`py-3.5 text-2xl font-bold tracking-tight border-b border-border-primary no-underline ${pathname === link.to ? 'text-text-primary' : 'text-text-secondary'}`}
-                >
-                  {link.label}
+          <>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMenuOpen(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-[2px] z-[198]"
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -20 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-[72px] left-1/2 -translate-x-1/2 z-[199] w-[90%] max-w-sm bg-bg-primary/95 border border-white/10 backdrop-blur-xl rounded-[24px] p-6 shadow-[0_24px_48px_rgba(0,0,0,0.8)] md:hidden"
+            >
+              <nav className="flex flex-col gap-1 mb-6">
+                <Link to="/" className={`py-3 px-4 rounded-xl text-lg font-bold tracking-tight no-underline transition-colors ${pathname === '/' ? 'text-text-primary bg-white/10' : 'text-text-secondary hover:bg-white/5'}`}>
+                  Home
                 </Link>
-              ))}
-            </nav>
-            <div className="pt-8">
-              <Button variant="primary" size="lg" className="w-full" onClick={() => setMenuOpen(false)}>
-                View Projects
-              </Button>
-            </div>
-          </motion.div>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className={`py-3 px-4 rounded-xl text-lg font-bold tracking-tight no-underline transition-colors ${pathname === link.to ? 'text-text-primary bg-white/10' : 'text-text-secondary hover:bg-white/5'}`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
+              <div className="flex flex-col gap-3">
+                <Button variant="primary" size="lg" className="w-full rounded-xl" onClick={() => setMenuOpen(false)}>
+                  View Projects
+                </Button>
+                <p className="text-[10px] text-center text-text-tertiary uppercase tracking-[0.2em] font-bold mt-4">
+                  © {new Date().getFullYear()} Incubation
+                </p>
+              </div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
