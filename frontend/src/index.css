@@ -1,0 +1,168 @@
+@import "tailwindcss";
+@source "./**/*.{js,jsx,ts,tsx}";
+
+@theme {
+  /* Colors */
+  --color-bg-primary: var(--theme-bg-primary);
+  --color-bg-secondary: var(--theme-bg-secondary);
+  --color-bg-surface: var(--theme-bg-surface);
+  --color-bg-elevated: var(--theme-bg-elevated);
+  
+  --color-border-primary: var(--theme-border-primary);
+  --color-border-hover: var(--theme-border-hover);
+  --color-border-strong: var(--theme-border-strong);
+
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-text-tertiary: var(--theme-text-tertiary);
+  --color-text-disabled: var(--theme-text-disabled);
+
+  --color-primary-blue: var(--theme-primary-blue);
+
+  /* Spacing */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-5: 40px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-10: 80px;
+  --spacing-12: 96px;
+  --spacing-16: 128px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* Font Size */
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-md: 17px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+  --font-size-3xl: 48px;
+  --font-size-4xl: 64px;
+  --font-size-5xl: 80px;
+  --font-size-6xl: 96px;
+
+  /* Shadows */
+  --shadow-glow: var(--theme-shadow-glow);
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  /* Animations */
+  @keyframes carousel-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  :root {
+    --theme-bg-primary: #ffffff;
+    --theme-bg-secondary: #ffffff;
+    --theme-bg-surface: #ffffff;
+    --theme-bg-elevated: #ffffff;
+    
+    --theme-border-primary: #e0e0e0;
+    --theme-border-hover: #c6c6c6;
+    --theme-border-strong: #8d8d8d;
+
+    --theme-text-primary: #161616;
+    --theme-text-secondary: #525252;
+    --theme-text-tertiary: #8d8d8d;
+    --theme-text-disabled: #c6c6c6;
+
+    --theme-primary-blue: #0f62fe;
+    --theme-shadow-glow: 0 0 0 1px rgba(15, 98, 254, 0.05), 0 8px 32px rgba(15, 98, 254, 0.08);
+  }
+
+  .dark {
+    --theme-bg-primary: #161616;
+    --theme-bg-secondary: #262626;
+    --theme-bg-surface: #161616;
+    --theme-bg-elevated: #393939;
+    
+    --theme-border-primary: #525252;
+    --theme-border-hover: #6f6f6f;
+    --theme-border-strong: #8d8d8d;
+
+    --theme-text-primary: #f4f4f4;
+    --theme-text-secondary: #c6c6c6;
+    --theme-text-tertiary: #a8a8a8;
+    --theme-text-disabled: #525252;
+
+    --theme-primary-blue: #4589ff;
+    --theme-shadow-glow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 8px 32px rgba(0, 0, 0, 0.8);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-5 sm:px-10 lg:px-16;
+  }
+
+  .surface {
+    @apply bg-bg-surface border border-border-primary rounded-md;
+  }
+
+  .surface-elevated {
+    @apply bg-bg-elevated border border-border-primary rounded-lg shadow-lg;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  ::selection {
+    background: var(--theme-primary-blue);
+    color: #ffffff;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@import "./styles/animations.css";
